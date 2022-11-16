@@ -8,4 +8,59 @@ pi圆周率  inf无穷大 eps浮点运算的相对精度 NAN不定值    i（j�
 
 #向量与多项式
 向量的生成：直接输入法、冒号法和利用MATLAB函数创建三种方法。
+
 直接输入法中，可以用空格和逗号分隔生成行向量，用分号分隔形成列向量。
+x=[1,2:3,4]
+
+冒号法
+x = first：increment：last 表示创建一个从first开始last结束，数据元素增量为increment的向量
+
+利用linspace创建变量
+linspace（first_value,last_value,number）从first开始，last结束，包含number个元素
+
+利用logspace创建对数分割向量，10的n次方
+logspace（first_value,last_value,number）
+
+向量的引用
+x（n）表示向量中的第n个元素
+x（n1：n2）表示向量中的第n1到n2元素
+
+向量的点积运算
+dot（a，b）
+dot（a，b，dim）
+
+向量的叉积
+cross（a，b）
+cross（a，b，dim）#dim维度
+
+多项式的构建
+直接输入
+利用函数poly2sym（p） p为多项式的系数向量
+
+多项式的乘法用conv（p1，p2）来实现，相当于执行两个数组的卷积
+多项式的除法用deconv（p1，p2）来实现，相当于执行两个数组的解卷
+[k,r]=deconv(p.q)
+k返回的函数是多项式p除以q的商，r是余式
+[k,r]=deconv(p,q) 相当于p=conv（q，k）+r
+
+由根构造多项式
+poly（root）得出p，然后poly2sym（p）得出多项式
+
+多项式的导数运算调用格式为polyder（p）
+
+单元型变量的创建
+（1）赋值语句直接定义
+{}定义，元素之间用大括号表示
+（2）对单元的元素逐个赋值
+cell（N）生成一个n*n的置空的单元数组
+cell（M*N）或cell（[M*N]） 生成一个m*n阶的置空的单元数组
+cell（M,N,P。。。）生成一个m*n*p。。。阶的置空的单元数组
+cell（size（A））生成与A同形式的单元型的置空矩阵
+
+cell（C， 'name'）在窗口显示单元型变量的内容的名称为name，不再是传统的ans
+
+cellplot（C， 'legend'）用图形显示单元型变量，并且有图形注释legend
+
+s=struct('field',{},field2',{}...) 表示建立一个空的结构数组，不含数据
+s=struct（'field',valuesl,'field2",valuese2...) 表示建立一个具有属性名和数据的结构数组
+
