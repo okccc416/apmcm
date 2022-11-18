@@ -64,3 +64,19 @@ cellplot（C， 'legend'）用图形显示单元型变量，并且有图形注�
 s=struct('field',{},field2',{}...) 表示建立一个空的结构数组，不含数据
 s=struct（'field',valuesl,'field2",valuese2...) 表示建立一个具有属性名和数据的结构数组
 
+eval(expression)
+[output...outputN] = eval(expression)
+expression是指含有有效的MATLAB表达式的字符串，如果需要在表达式中包含数值，
+则需要使用函数int2str、num2str 或者sprintf进行转换。outputl...outputN是表达式的输出
+sym(p)
+p是指数值表达式
+
+Subs(S,old,new)
+将old变量替换为new变量，直接计算符号表达式与数值表达式的结果
+
+Digits(D)
+设置有效数字个数为D的近似解精度
+vpa(S)
+符号表达式S在digits函数设置的精度下的数值解
+vpa(S,D)
+符号表达式s在digits函数设置的有效数字个数为D的近似解精度下的数值解
